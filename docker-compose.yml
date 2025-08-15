@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: restaurant_db
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: restaurant_user
+      MYSQL_PASSWORD: restaurant_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  backend:
+    build:
+      context: ./restaurant_backend
+      dockerfile: Dockerfile
+    command: >
+      sh -c "python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py collectstatic --noinput &&
+             python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DEBUG=1
+      - DB_HOST=db
+      - DB_NAME=restaurant_db
+      - DB_USER=restaurant_user
+      - DB_PASS=restaurant_pass
+      - SECRET_KEY=your-secret-key-here
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}  # ADD THIS LINE
+    volumes:
+      - ./restaurant_backend:/app
+      - static_volume:/app/staticfiles
+      - media_volume:/app/media
+
+  frontend:
+    build:
+      context: ./my-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+      - FAST_REFRESH=true
+      - WDS_SOCKET_HOST=localhost
+      - WDS_SOCKET_PORT=3000
+    volumes:
+      - ./my-frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    stdin_open: true
+    tty: true
+
+volumes:
+  mysql_data:
+  static_volume:
+  media_volume:

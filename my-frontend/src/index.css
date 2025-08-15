@@ -1,0 +1,266 @@
+/* Import Bootstrap CSS */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Optional: Import Google Fonts for Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* Global Custom Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa; /* Light gray background */
+  color: #343a40; /* Dark gray text */
+  line-height: 1.6;
+}
+
+/* Custom spacing for sections to account for fixed header */
+section {
+  padding-top: 6rem; /* Adjust based on header height */
+  padding-bottom: 4rem;
+}
+
+.hero-section {
+  height: 100vh; /* Ensures full viewport height */
+  margin-top: -80px; /* Pulls hero section up to overlap header */
+  padding-top: 80px; /* Adds space so content doesn't hide behind navbar */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), 
+              url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Enhanced hero text styling */
+.hero-section h2 {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  letter-spacing: -1px;
+  font-weight: 800;
+}
+
+.hero-section p.lead {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-weight: 500;
+}
+
+/* Enhanced hero button */
+.hero-section .btn-primary {
+  background: linear-gradient(45deg, #dc3545, #e85a67);
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-section .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(220, 53, 69, 0.5);
+  background: linear-gradient(45deg, #e85a67, #dc3545);
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Stronger text shadow for readability */
+}
+
+/* Card Styles */
+.card {
+  border-radius: 1.25rem; /* More rounded corners */
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15); /* Stronger, softer shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: none; /* Remove default Bootstrap border */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /* Even stronger shadow on hover */
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #dc3545; /* Red color for primary actions */
+  border-color: #dc3545;
+  border-radius: 2rem; /* Pill-shaped buttons */
+  padding: 0.75rem 2rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3); /* Shadow for buttons */
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(220, 53, 69, 0.4);
+}
+
+.btn-success {
+  background-color: #28a745; /* Green for order button */
+  border-color: #28a745;
+  border-radius: 2rem;
+  padding: 0.75rem 2rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(40, 167, 69, 0.4);
+}
+
+.btn-info {
+  background-color: #17a2b8; /* Blue for map button */
+  border-color: #17a2b8;
+  border-radius: 2rem;
+  padding: 0.75rem 2rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 8px rgba(23, 162, 184, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+  border-color: #117a8b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(23, 162, 184, 0.4);
+}
+
+/* Navbar Styles */
+.navbar {
+  border-bottom-left-radius: 1.5rem; /* More rounded bottom corners */
+  border-bottom-right-radius: 1.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Softer shadow */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.navbar-brand .h3 {
+    font-size: 1.75rem; /* Slightly larger brand text */
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #495057; /* Darker link color */
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #dc3545; /* Red on hover */
+}
+
+/* Form Control Styles */
+.form-control {
+  border-radius: 0.75rem; /* More rounded form fields */
+  padding: 0.85rem 1.25rem;
+  border: 1px solid #cedacf;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25); /* Red focus ring */
+  outline: 0;
+}
+
+/* Custom Colors (to match previous red accent) */
+.text-red-600 {
+  color: #dc3545 !important; /* Bootstrap's danger color */
+}
+
+.bg-red-50 {
+  background-color: #fcf4f4; /* Lighter red background */
+}
+
+.border-red-200 {
+  border-color: #f5c6cb; /* Lighter red border */
+}
+
+/* Specific adjustments for menu category titles */
+.card .h2.border-bottom {
+    border-width: 3px !important; /* Thicker border for menu categories */
+    border-color: #dc3545 !important;
+    padding-bottom: 0.75rem !important;
+}
+
+/* Ensure images in cards are visually appealing */
+.card-img-top {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.scroll-wrapper {
+  position: relative;
+}
+
+.scroll-container {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 2rem;
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  user-select: none;
+}
+
+.scroll-left {
+  left: 0;
+}
+
+.scroll-right {
+  right: 0;
+}
+

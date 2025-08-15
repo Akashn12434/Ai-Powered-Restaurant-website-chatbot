@@ -158,8 +158,8 @@ def chat_history(request):
             status=status.HTTP_404_NOT_FOUND
         )
 
-PAYPAL_CLIENT_ID = 'Ab2MKwQQORsWLMBa91T1EIl9B1iYhwvgBpDrV94Vvevr1t1jh_r3v7XdkembdRvAXNkKRhjlltet1FIr'
-PAYPAL_SECRET = 'EJ8kiqSOiAyft4Hw57N5BU66xO190jCE3Y3Zcf2A936P-TfCXi9cTAOsZFk4fVn1GqijWMzPAKNdfJhl'
+PAYPAL_CLIENT_ID = 'your paypal client id'
+PAYPAL_SECRET = 'your paypal secret key'
 PAYPAL_BASE_URL = 'https://api-m.sandbox.paypal.com'  # Sandbox URL
 
 def get_paypal_access_token():

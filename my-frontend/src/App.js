@@ -440,7 +440,7 @@ const renderPayPalButton = (backendOrderId, totalAmount) => {
       console.log("📦 Loading PayPal SDK...");
       const script = document.createElement("script");
       // Enhanced SDK URL with debug and disable-funding
-      script.src = "https://www.paypal.com/sdk/js?client-id=Ab2MKwQQORsWLMBa91T1EIl9B1iYhwvgBpDrV94Vvevr1t1jh_r3v7XdkembdRvAXNkKRhjlltet1FIr&currency=USD&intent=capture&debug=true&disable-funding=credit,card";
+      script.src = "https://www.paypal.com/sdk/js?client-id=paypalclientid&currency=USD&intent=capture&debug=true&disable-funding=credit,card";
       script.onload = () => {
         console.log("✅ PayPal SDK loaded successfully");
         resolve();

@@ -389,7 +389,7 @@ Booking placed at: {booking.created_at.strftime('%Y-%m-%d %H:%M:%S')}
             subject=f"📅 New Booking Auto-Confirmed #{booking.id} - {booking.name}",
             message=admin_message,
             from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=['akashananya2002@gmail.com'],
+            recipient_list=['hotelemailid'],
         )
 
     @action(detail=True, methods=['post'])
@@ -694,7 +694,7 @@ Message:
 {instance.message}
 """,
             from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=['akashananya2002@gmail.com'],  # Replace with hotel email
+            recipient_list=['hotelemailid'],  # Replace with hotel email
             fail_silently=False,
         )
 

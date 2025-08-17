@@ -1,16 +1,65 @@
 # Ai-Powered-Restaurant-website-chatbot
-This project is developed using Django Rest Framework as an internship assignment. A Django REST Framework API for storing and searching paragraphs by words. Users can store multiple paragraphs of text and search for specific words to find the top 10 paragraphs containing those words.
+This project is a full-stack AI-powered restaurant management system designed to modernize dining experiences while simplifying operations for restaurants. The platform features a responsive web interface with interactive sections for menu browsing, online ordering, reservations, and contact forms, ensuring a smooth and engaging customer journey.
+
+At its core, the system integrates an AI-powered chatbot built with LangChain’s ChatGroq and the open-source LLaMA 3.3-70B model, enabling customers to make real-time menu queries, receive instant responses to FAQs, and enjoy personalized assistance.
+
+The stack combines ReactJS (frontend), Django REST Framework (backend), MySQL (database), and Docker (deployment), delivering a scalable, efficient, and intelligent solution that empowers restaurants to operate seamlessly while offering guests a next-generation AI-assisted dining experience.
 
 ## Features
-- User authentication with token-based auth
-- Store multiple paragraphs of text
-- Word tokenization and indexing
-- Search paragraphs by words
-- Top 10 results ordered by word frequency
-- PostgreSQL database with proper indexing
-- Swagger/OpenAPI documentation
-- Docker support
-- Comprehensive test coverage
+Menu Management – Categories & items with images, prices, and availability.
+
+Order Management – Customers can place and track food orders.
+
+Table Reservations – Time-slot based booking system.
+
+AI Chatbot – Interactive assistant for quick queries, FAQs, and booking help.
+
+Chef Profiles – Showcase restaurant chefs with images and expertise.
+
+Customer Reviews – Collect and display ratings & feedback.
+
+Special Offers – Highlight promotions and discounts.
+
+Location & Contact – Multi-location support and contact form.
+
+Admin Panel – Manage menu, orders, bookings, offers, and more.
+
+### Implementation Features
+🍽️ Menu Management
+
+Dynamic menu browsing with categories (starters, main course, desserts, beverages).
+
+Search & filter options (by cuisine, price, availability).
+
+AI-powered recommendations based on user preferences.
+
+Real-time updates – changes in backend reflect instantly on frontend.
+
+🛒 Ordering System
+
+Add to Cart with quantity selection.
+
+Customizations (e.g., spice level, add/remove toppings).
+
+Order summary & confirmation before checkout.
+
+Payment integration (PayPal / Stripe ready).
+
+Order tracking for customers.
+
+AI Chatbot-assisted smart ordering (e.g., “Order 2 pizzas and a Coke”).
+
+📅 Booking & Reservations
+
+Table reservation system with date, time, and number of guests.
+
+Availability check in real-time.
+
+Instant confirmation & cancellation options.
+
+AI Chatbot-enabled booking assistant (e.g., “Book a table for 4 at 8 PM tomorrow”).
+
+Customer notifications via email/SMS for confirmations.
 
 ## Technical Implementation:
 

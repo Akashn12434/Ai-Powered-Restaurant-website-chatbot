@@ -39,7 +39,8 @@ services:
       - DB_USER=restaurant_user
       - DB_PASS=restaurant_pass
       - SECRET_KEY=your-secret-key-here
-      - GOOGLE_API_KEY=${GOOGLE_API_KEY}  # ADD THIS LINE
+      
+      - GROQ_API_KEY=${GROQ_API_KEY} 
     volumes:
       - ./restaurant_backend:/app
       - static_volume:/app/staticfiles

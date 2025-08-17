@@ -117,7 +117,7 @@ def quick_options(request):
 def test_api_key(request):
     """Test endpoint to verify API key configuration"""
     try:
-        api_key = getattr(settings, 'GOOGLE_API_KEY', None)
+        api_key = getattr(settings, 'GROQ_API_KEY', None)
         has_key = bool(api_key and len(api_key.strip()) > 0)
         
         return Response({

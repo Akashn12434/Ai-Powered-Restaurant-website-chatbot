@@ -5,7 +5,7 @@
 
 - The stack combines ReactJS (frontend), Django REST Framework (backend), MySQL (database), and Docker (deployment), delivering a scalable, efficient, and intelligent solution that empowers restaurants to operate seamlessly while offering guests a next-generation AI-assisted dining experience.
 
-### Features
+## Features
 🍽️ Menu Management – Categories & items with images, prices, and availability
 
 🛒 Order Management – Customers can place and track food orders
@@ -24,7 +24,7 @@
 
 🛠️ Admin Panel – Manage menu, orders, bookings, offers, and more
 
-### Implementation Features
+## Implementation Features
 🍽️ Menu Management
 
   - Dynamic menu browsing with categories (starters, main course, desserts, beverages).

@@ -40,25 +40,31 @@ The API follows these design patterns:
 
 ## 🚀 API Endpoints
 
-### 🔐 Authentication
-| Method | Endpoint                     | Description                      |
-|--------|------------------------------|----------------------------------|
-| POST   | /api/v1/auth/register/       | Register a new user              |
-| POST   | /api/v1/auth/login/          | Login and get authentication token |
-| POST   | /api/v1/auth/logout/         | Logout (requires authentication) |
+### 🍽️ Restaurant Management
 
-### 📝 Paragraphs
-| Method | Endpoint                          | Description                          |
-|--------|-----------------------------------|--------------------------------------|
-| POST   | /api/v1/paragraphs/store/         | Store paragraphs (requires authentication) |
-| GET    | /api/v1/paragraphs/               | List user's paragraphs (requires authentication) |
-| GET    | /api/v1/paragraphs/{id}/          | Get specific paragraph (requires authentication) |
-| DELETE | /api/v1/paragraphs/{id}/          | Delete paragraph (requires authentication) |
+| Method    | Endpoint             | Description                |
+| --------- | -------------------- | -------------------------- |
+| GET, POST | /menu-categories/    | Manage menu categories     |
+| GET, POST | /menu-items/         | Manage food & drink items  |
+| GET, POST | /locations/          | Restaurant locations       |
+| GET, POST | /chefs/              | Chef profiles              |
+| GET, POST | /reviews/            | Customer reviews           |
+| GET, POST | /faqs/               | Frequently asked questions |
+| GET, POST | /special-offers/     | Promotions & discounts     |
+| GET, POST | /time-slots/         | Available booking slots    |
+| GET, POST | /table-bookings      | Manage reservations        |
+| GET, POST | /orders/             | Place & manage orders      |
+| GET, POST | /contact-messages`   | Contact form submissions   |
 
-### 🔍 Search
-| Method | Endpoint                          | Description                           |
-|--------|-----------------------------------|---------------------------------------|
-| GET    | /api/v1/search/?word={word}       | Search paragraphs by word (requires authentication) |
+###  🔍 AI Assistant Endpoints
+
+| Method | Endpoint                 | Description                         |
+| ------ | ------------------------ | ----------------------------------- |
+| GET    | /api/                    | All registered routes from router   |
+| POST   | /api/ai/chat/            | Send a chat message to the AI       |
+| GET    | /api/ai/quick-options/   | Retrieve predefined quick responses |
+| GET    | /api/ai/history/         | Fetch user’s chat history           |
+| GET    | /api/ai/test/            | Test API key / AI connection health |
 
 ---
 

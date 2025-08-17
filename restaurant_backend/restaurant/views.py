@@ -73,8 +73,8 @@ def chat_message(request):
             }, status=status.HTTP_200_OK)
         
         # Check API key
-        if not settings.GOOGLE_API_KEY:
-            logger.error("Google API key not found in settings")
+        if not settings.GROQ_API_KEY:
+            logger.error("Groq API key not found in settings")
             return Response({
                 'response': "I'm having trouble connecting to my AI service. Please contact our staff for assistance!",
                 'session_id': session_id or 'error',
